@@ -99,71 +99,74 @@
 -- Complete examples can be found in the
 -- <https://github.com/fimad/scalpel/tree/master/examples examples> folder in
 -- the scalpel git repository.
-module Text.HTML.Scalpel (
+module Text.HTML.Scalpel
+  (
 -- * Selectors
     Selector
-,   AttributePredicate
-,   AttributeName (..)
-,   TagName (..)
-,   tagSelector
-,   textSelector
+  , AttributePredicate
+  , AttributeName(..)
+  , TagName(..)
+  , tagSelector
+  , textSelector
 -- ** Wildcards
-,   anySelector
+  , anySelector
 -- ** Tag combinators
-,   (//)
-,   atDepth
+  , (//)
+  , atDepth
 -- ** Attribute predicates
-,   (@:)
-,   (@=)
-,   (@=~)
-,   hasClass
-,   notP
-,   match
+  , (@:)
+  , (@=)
+  , (@=~)
+  , hasAttribute
+  , hasClass
+  , notP
+  , match
 
 -- * Scrapers
-,   Scraper
-,   ScraperT
+  , Scraper
+  , ScraperT
 -- ** Primitives
-,   attr
-,   attrs
-,   html
-,   htmls
-,   innerHTML
-,   innerHTMLs
-,   text
-,   texts
-,   chroot
-,   chroots
-,   position
-,   matches
+  , attr
+  , attrs
+  , html
+  , htmls
+  , innerHTML
+  , innerHTMLs
+  , text
+  , texts
+  , chroot
+  , chroots
+  , position
+  , matches
 -- ** Executing scrapers
-,   scrape
-,   scrapeStringLike
-,   scrapeT
-,   scrapeStringLikeT
-,   URL
-,   fetchTags
-,   fetchTagsWithConfig
-,   scrapeURL
-,   scrapeURLWithConfig
-,   Config (..)
-,   Decoder
-,   defaultDecoder
-,   utf8Decoder
-,   iso88591Decoder
+  , scrape
+  , scrapeStringLike
+  , scrapeT
+  , scrapeStringLikeT
+  , URL
+  , fetchTags
+  , fetchTagsWithConfig
+  , scrapeURL
+  , scrapeURLWithConfig
+  , Config(..)
+  , Decoder
+  , defaultDecoder
+  , utf8Decoder
+  , iso88591Decoder
 
 -- * Serial Scraping
-,   SerialScraper
-,   SerialScraperT
-,   inSerial
+  , SerialScraper
+  , SerialScraperT
+  , inSerial
 -- ** Primitives
-,   stepNext
-,   stepBack
-,   seekNext
-,   seekBack
-,   untilNext
-,   untilBack
-) where
+  , stepNext
+  , stepBack
+  , seekNext
+  , seekBack
+  , untilNext
+  , untilBack
+  )
+where
 
 import Text.HTML.Scalpel.Core
 import Text.HTML.Scalpel.Internal.Scrape.URL

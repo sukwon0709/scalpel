@@ -86,6 +86,16 @@ scrapeTests = "scrapeTests" ~: TestList
     (Just [])
     (htmls ("input" @: [hasAttribute "type"]))
   , scrapeTest
+    "hasAttribute should match tags with the specified attribute"
+    "<input type='text' name='abc'><input type='text' name='def'>"
+    (Just ["abc", "def"])
+    (attrs "name" ("input" @: [hasAttribute "type"]))
+  , scrapeTest
+    "hasAttribute should match tags with the specified attribute"
+    "<input type='text' name='abc'><input name='def'>"
+    (Just ["abc"])
+    (attrs "name" ("input" @: [hasAttribute "type"]))
+  , scrapeTest
     "hasClass should match tags with multiple classes"
     "<a class=\"a b\">foo</a>"
     (Just ["<a class=\"a b\">foo</a>"])

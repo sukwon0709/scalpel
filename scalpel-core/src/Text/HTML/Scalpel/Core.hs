@@ -11,61 +11,64 @@
 -- More thorough documentation including example code can be found in the
 -- documentation of the <https://hackage.haskell.org/package/scalpel scalpel>
 -- package.
-module Text.HTML.Scalpel.Core (
+module Text.HTML.Scalpel.Core
+  (
 -- * Selectors
     Selector
-,   AttributePredicate
-,   AttributeName (..)
-,   TagName (..)
-,   tagSelector
-,   textSelector
+  , AttributePredicate
+  , AttributeName(..)
+  , TagName(..)
+  , tagSelector
+  , textSelector
 -- ** Wildcards
-,   anySelector
+  , anySelector
 -- ** Tag combinators
-,   (//)
-,   atDepth
+  , (//)
+  , atDepth
 -- ** Attribute predicates
-,   (@:)
-,   (@=)
-,   (@=~)
-,   hasClass
-,   notP
-,   match
+  , (@:)
+  , (@=)
+  , (@=~)
+  , hasAttribute
+  , hasClass
+  , notP
+  , match
 
 -- * Scrapers
-,   Scraper
-,   ScraperT
+  , Scraper
+  , ScraperT
 -- ** Primitives
-,   attr
-,   attrs
-,   html
-,   htmls
-,   innerHTML
-,   innerHTMLs
-,   text
-,   texts
-,   chroot
-,   chroots
-,   position
-,   matches
+  , attr
+  , attrs
+  , html
+  , htmls
+  , innerHTML
+  , innerHTMLs
+  , text
+  , texts
+  , chroot
+  , chroots
+  , position
+  , matches
 -- ** Executing scrapers
-,   scrape
-,   scrapeT
-,   scrapeStringLike
-,   scrapeStringLikeT
+  , scrape
+  , scrapeT
+  , scrapeStringLike
+  , scrapeStringLikeT
 
 -- * Serial Scraping
-,   SerialScraper
-,   SerialScraperT
-,   inSerial
+  , SerialScraper
+  , SerialScraperT
+  , inSerial
 -- ** Primitives
-,   stepNext
-,   stepBack
-,   seekNext
-,   seekBack
-,   untilNext
-,   untilBack
-) where
+  , stepNext
+  , stepBack
+  , seekNext
+  , seekBack
+  , untilNext
+  , untilBack
+  )
+where
 
 import Text.HTML.Scalpel.Internal.Scrape
 import Text.HTML.Scalpel.Internal.Scrape.StringLike
